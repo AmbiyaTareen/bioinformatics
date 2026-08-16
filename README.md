@@ -1,4 +1,6 @@
 # BIOINFORMATICS
+## Architecture 
+![Docker FASTA parser pipeline](Docs/architecture.svg)
 ## METABRIC Breast Cancer Subtype Classification
 
 ## Goal
