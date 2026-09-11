@@ -1,6 +1,40 @@
 # BIOINFORMATICS
-## Architecture 
+## FASTA Parser + Docker Pipeline
+
+A Python FASTA parser (Biopython-based) with explicit error handling, containerized for reproducible runs.
+
+### What it does
+- Parses FASTA files and validates sequence content
+- Catches four failure modes: missing file, empty file, malformed/non-FASTA content, invalid characters (anything outside A/T/G/C/N)
+- Runs identically on host or inside Docker
+
+### Architecture
+
 ![Docker FASTA parser pipeline](Docs/architecture.svg)
+
+### Try it
+
+```bash
+docker build -t fasta-parser .
+docker run -v $(pwd)/sample_data:/app/sample_data fasta-parser sample_data/sample.fasta
+```
+
+### Test suite
+
+Five cases in [`sample_data/`](sample_data/) validate every failure mode — see that folder's README for the full table and a video walkthrough of the containerized run.
+
+| File | Triggers |
+|---|---|
+| `sample.fasta` | Valid parse, no errors |
+| `empty_test.fasta` | `ValueError` — empty file |
+| `garbage_test.fasta` | `ValueError` — malformed FASTA |
+| `bad_chars_test.fasta` | `ValueError` — invalid sequence chars |
+| *(nonexistent path)* | `FileNotFoundError` |
+
+### Tools
+Python, Biopython, Docker
+
+---
 ## METABRIC Breast Cancer Subtype Classification
 
 ## Goal
