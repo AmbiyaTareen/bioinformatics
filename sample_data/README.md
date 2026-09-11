@@ -21,3 +21,8 @@ python parser_with_errorhandling.py sample_data/nonexistent.fasta
 ```
 
 Same test set used in the Dockerized version — see the Docker video walkthrough for a live run of all five cases inside a container.
+
+https://github.com/user-attachments/assets/5e07affd-fd34-42a6-acf3-77d3b6d4baec
+
+
+
