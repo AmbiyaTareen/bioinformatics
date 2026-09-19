@@ -1,20 +1,10 @@
 # BIOINFORMATICS
 
-## What's in this repo
 - **FASTA parser + Docker:** parser_with_errorhandling.py, Dockerfile, sample_data/
-- **METABRIC subtype classification:** metabric_cleaning.py, METABRIC_HER2_limitation.md
-- **Protein-ligand ML:** protein_ligand_ml.py, BBBP.csv
-- **Pairwise alignment:** local_align.py, pairwise_alignment.py
-- **Early exercises:** bob.py, grains.py, coll.py, titanic.py
-## FASTA Parser + Docker Pipeline
-
-A Python FASTA parser (Biopython-based) with explicit error handling, containerized for reproducible runs.
-
-### What it does
-- Parses FASTA files and validates sequence content
-- Catches four failure modes: missing file, empty file, malformed/non-FASTA content, invalid characters (anything outside A/T/G/C/N)
-- Runs identically on host or inside Docker
-
+- **METABRIC subtype classification:** ml/metabric_cleaning.py, METABRIC_HER2_limitation.md
+- **Protein-ligand ML:** ml/protein_ligand_ml.py, ml/BBBP.csv
+- **Sequence alignment and FASTA parsing:** alignment/
+- **Early exercises:** exercises/
 ### Architecture
 
 ![Docker FASTA parser pipeline](Docs/architecture.svg)
