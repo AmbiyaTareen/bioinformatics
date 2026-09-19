@@ -1,7 +1,7 @@
 # BIOINFORMATICS
 
 ## What's in this repo
-- - **FASTA parser + Docker:** parser_with_errorhandling.py, Dockerfile, sample_data/
+- **FASTA parser + Docker:** parser_with_errorhandling.py, Dockerfile, sample_data/
 - **METABRIC subtype classification:** ml/metabric_cleaning.py, METABRIC_HER2_limitation.md
 - **Protein-ligand ML:** ml/protein_ligand_ml.py, ml/BBBP.csv
 - **Sequence alignment and FASTA parsing:** alignment/
