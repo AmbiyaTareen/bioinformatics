@@ -4,6 +4,12 @@ A baseline machine-learning model that tries to predict how sensitive cancer cel
 
 **Short result:** the model is only marginally better than predicting the average (R² 0.017). The main finding is a data-quality one: the CNA, Gene Expression and Methylation columns are Y/N availability flags, not measured values, so the model had no real molecular signal to learn from.
 
+## Background
+
+Population-averaged drug-response predictions systematically hide the patients the average gets wrong. Huang et al. found that an overall chemo-benefit estimate masks subgroups — e.g. Stage I, node-positive, low-grade elderly TNBC patients — who derive no benefit at all, visible only once individual clinical features are modeled rather than averaged over. Sotudian & Paschalidis found a related failure in model design: optimizing for average accuracy sacrifices precision on rare, high-stakes drugs, which their ranking-based (rather than average-based) approach avoids. Qureshi et al. showed that in EGFR-TKI resistance, molecular specificity — geometric and binding-energy features of a patient's exact mutation — carries far more predictive power than clinical or demographic variables.
+
+These three studies disagree on which kind of specificity matters most, but agree that averaging across patients or drugs is where clinically important signal gets lost. This project follows that logic: it predicts drug response at the individual sample level, using molecular/genomic features as the primary signal, with clinical variables treated as secondary and exploratory.
+
 Full write-up: [`Fulvestrant_GDSC_Baseline_Report_v1.pdf`](../Docs/Fulvestrant_GDSC_Baseline_Report_v1.pdf)
 
 ## Question
